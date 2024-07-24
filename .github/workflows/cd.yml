@@ -12,9 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v3 #setup nodejs in our runner
-      - run: npm install pm2@latest -g #install pm2 global
-
       - name: Deploy Using ssh
         uses: appleboy/ssh-action@master
         with:
@@ -26,5 +23,8 @@ jobs:
             cd auto-deploy-flask
             git pull origin main
             git status
+            sudo ln -s "$NVM_DIR/versions/node/v20.15.1/bin/node" "/usr/local/bin/node"
+            sudo ln -s "$NVM_DIR/versions/node/v20.15.1/bin/npm" "/usr/local/bin/npm"
+            sudo ln -s "$NVM_DIR/versions/node/v20.15.1/bin/pm2" "/usr/local/bin/pm2"
             pm2 reload AutoDeployFlask
             pm2 restart AutoDeployFlask
