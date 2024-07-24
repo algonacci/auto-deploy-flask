@@ -1,11 +1,17 @@
 import os
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Auto deploy Flask UPDATE"
+    return jsonify({
+        "status" : {
+            "message": "Deployed with PM2",
+            "code": 200,
+        },
+        "data": None,
+    })
 
 if __name__ == "__main__":
     app.run(
