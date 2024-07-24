@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Auto deploy Flask"
+    return "Auto deploy Flask UPDATE"
 
 if __name__ == "__main__":
     app.run(
