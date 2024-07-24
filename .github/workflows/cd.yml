@@ -23,5 +23,7 @@ jobs:
             cd auto-deploy-flask
             git pull origin main
             git status
+            which pm2
+            export PATH=$PATH:/usr/local/bin
             pm2 reload AutoDeployFlask
             pm2 restart AutoDeployFlask
