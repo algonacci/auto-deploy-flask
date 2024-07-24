@@ -23,6 +23,5 @@ jobs:
             cd auto-deploy-flask
             git pull origin main
             git status
-            pip install -r requirements.txt
             pm2 reload AutoDeployFlask
             pm2 restart AutoDeployFlask
