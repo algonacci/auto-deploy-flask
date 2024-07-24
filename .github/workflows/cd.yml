@@ -23,7 +23,6 @@ jobs:
             cd auto-deploy-flask
             git pull origin main
             git status
-            which pm2
-            export PATH=$PATH:/usr/local/bin
+            sudo ln -s "$NVM_DIR/versions/node/v20.15.1/bin/pm2" "/usr/local/bin/pm2"
             pm2 reload AutoDeployFlask
             pm2 restart AutoDeployFlask
