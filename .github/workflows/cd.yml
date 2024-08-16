@@ -26,7 +26,7 @@ jobs:
 
             source .auto/bin/activate
 
-            pip install -r requirements.txt
+            python -m pip install -r requirements.txt
 
             ps aux | grep gunicorn
 
