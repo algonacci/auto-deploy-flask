@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     return jsonify({
         "status" : {
-            "message": "Deployed with PM2",
+            "message": "Deployed with Gunicorn",
             "code": 200,
         },
         "data": None,
